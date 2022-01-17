@@ -1,0 +1,71 @@
+*, body{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: #000;
+
+  .bg-grey{
+    background-color: #2A2A2A;
+  }
+
+
+  .navbar-collapse{
+    margin-left: -100px;
+    .navbar-nav{
+      .nav-item{
+        margin-right: 30px;
+        margin-left: 30px;
+      }
+    }
+  }
+  
+  .btn-sign-in{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .content{
+    .banner-container{
+      background-color: aliceblue;
+    }
+  }
+
+  .container-popular-games{
+    .card{
+      background: none;
+      margin: 0;
+      color: #fff;
+      width: 15rem;
+      .game-title{
+        margin-top: -10px;
+      }
+      .game-price{
+        margin-top: -10px;
+      }
+    }
+  }
+
+  .container-free-games{
+    width: 100%;
+    .card{
+      background: none;
+      color: #fff;
+      width: 15rem;
+    }
+    .arrow-button{
+      margin-left: -50px;
+    }
+  }
+
+  .icon-white{
+    i{
+      color: #fff;
+    }
+  }
+}
+
+.small-text{
+  font-size: 1rem;
+}
