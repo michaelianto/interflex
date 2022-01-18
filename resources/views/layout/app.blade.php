@@ -21,17 +21,17 @@
     </button>
     <div class="collapse navbar-collapse  justify-content-center" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="/store">Store <span class="sr-only">(current)</span></a>
+        <li class="nav-item">
+          <a class="nav-link" href="/store">Store</a>
         </li>
-        @if (Auth::user()->role == 'member')
+        @if (Auth::user() && Auth::user()->role == 'member')
           <li class="nav-item">
             <a class="nav-link" href="/library">Library</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/cart">Cart</a>
           </li>
-        @elseif(Auth::user()->role == 'admin')
+        @elseif(Auth::user() && Auth::user()->role == 'admin')
           <li class="nav-item">
             <a class="nav-link" href="/admin">Dashboard</a>
           </li>

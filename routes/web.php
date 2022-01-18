@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\AuthController;
 
 /*
@@ -49,6 +50,8 @@ Route::get('/admin/categories/edit/{id}', [CategoryController::class, 'edit'])->
 Route::post('/admin/categories/edit/{id}', [CategoryController::class, 'update'])->middleware(['admin']);
 Route::delete('/admin/categories/delete/{id}', [CategoryController::class, 'destroy'])->middleware(['admin']);
 
+
+Route::get('/admin/transactions', [TransactionController::class, 'index'])->middleware(['admin']);
 
 // Mohon dirapikan ini temporary
 Route::get('/game/{id}', [GameController::class, 'details']);

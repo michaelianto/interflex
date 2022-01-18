@@ -179,9 +179,27 @@ class GameController extends Controller
     public function details($id){
         $game = Game::with('category')->findOrFail($id);
         $image = $game->galleries()->first();
+        if(!Auth::user()){
+            $status = 0;
+        }else{
+            $exists = DB::table('transactions')
+                        ->join('transaction_details', 'transaction_details.transaction_id', '=', 'transactions.id')
+                        ->join('games', 'transaction_details.game_id', '=', 'games.id')
+                        ->where('transactions.user_id', Auth::user()->id)
+                        ->where('transaction_details.game_id', $id)
+                        ->select('games.id')
+                        ->get();
+            if(!$exists->isEmpty()){
+                $status = 1;
+            }else{
+                $status = 0;
+            }
+        }
+        
         return view('game-details', [
             'game' => $game,
-            'image' => $image
+            'image' => $image,
+            'status' => $status
         ]);
     }
 

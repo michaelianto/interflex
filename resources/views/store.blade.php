@@ -21,7 +21,7 @@
               <div class="card-body">
                 <div class="mb-2">
                   <p class="card-text game-title d-inline">{{ $game->name }}</p>
-                  @if ($game->price != 0)
+                  @if ($game->price != 0 && $game->discount != 0)
                     <p class="card-text btn btn-primary btn-sm ml-2">-{{ $game->discount }}%</p>
                   @endif
                 </div>

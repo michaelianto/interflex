@@ -1,6 +1,7 @@
 *, body {
   margin: 0;
   padding: 0;
+  font-family: 'Assistant';
 }
 
 body {
@@ -63,6 +64,6 @@ body .icon-white i {
 }
 
 .small-text {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 /*# sourceMappingURL=index.css.map */

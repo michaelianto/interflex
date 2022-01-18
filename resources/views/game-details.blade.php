@@ -24,7 +24,7 @@
       <div class="col-8">
         <h1>{{ $game->name }}</h1>
         <img src="{{ Storage::url($image->image) }}" alt="Game Image" width="300px" class="d-block">
-        <button type="button" class="btn btn-secondary btn-lg small-text mt-2" disabled>{{ $game->category->name }}</button>
+        <button type="button" class="btn btn-secondary btn-sm small-text mt-2" disabled>{{ $game->category->name }}</button>
         <p class="mt-2">{{ $game->description }}</p>
       </div>
       <div class="col-4">
@@ -40,7 +40,11 @@
         <form action="/add-cart" method="post">
           @csrf
           <input type="hidden" name="game_id" value="{{ $game->id }}">
-          <input type="submit" value="Add to Cart" class="btn btn-outline-primary btn-block mt-2">
+          @if ($status == 1)    
+            <input type="submit" value="Already Exist in Library" class="btn btn-outline-secondary btn-block mt-2 text-white" disabled>
+          @else
+            <input type="submit" value="Add to Cart" class="btn btn-outline-primary btn-block mt-2">
+          @endif
         </form>
         <table class="container-fluid mt-3">
           <tr>
